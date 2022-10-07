@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<title>FormularioRegistro</title>
+</head>
+
+<body>
+
+	<div class="container">
+		<div id="header">
+			<!-- imagen del logo de la institucion -->
+			<img src="" alt="">
+			<!-- titulo del formulario -->
+			<p>FORMULARIO DE PREINSCRIPCIÓN</p>
+		</div>
+		<div id="barra"></div>
+		<div id="banner">
+			<!-- texto alternativo del banner -->
+			<p>Ingreso 2023</p>
+		</div>
+	</div>
+
+	<!------------------------------------------------------------------- FORMUALARIOS ------------------------------------------------------------------->
+	<div class="content">
+		<h1>Complete los siguientes datos</h1>
+		<h4 style="color: rgba(255, 93, 0, 0.6);">(*) Campos obligatorios</h4>
+		<br>
+		<form action="registro.php" method="POST">
+			<h3>Datos Personales</h3>
+			<hr>
+			<!-------------------------------------------------- DATOS PERSONALES FORMUALARIO -------------------------------------------------->
+			<table border="1">
+				<!---------------------------------------- FILA 1 DEL FORMUALARIO ---------------------------------------->
+				<tr>
+					<td><label>*Nombres</label></td>
+					<td><input type="text" name="nombreuser" placeholder="Juan Pedro" required /></td>
+				</tr>
+				<tr>
+					<td><label>*Apellidos</label></td>
+					<td><input type="text" name="apellidosuser" placeholder="Rodriguez" required /></td>
+				</tr>
+				<!---------------------------------------- FILA 2 DEL FORMUALARIO  ---------------------------------------->
+				<tr>
+					<td><label>*Fecha de Nacimiento</label></td>
+					<td><input type="date" name="fecha_nacimientoUSer" placeholder="12/12/1990" required /></td>
+				</tr>
+				<tr>
+					<td><label>*Lugar de Nacimiento</label></td>
+					<td><input type="text" name="lugar_nacimientoUSer" placeholder="Cipolletti" required /></td>
+				</tr>
+				<tr>
+					<td><label>*Tipo de Documento</label></td>
+					<td><input type="text" name="tipo_docUser" placeholder="Elegir Opción" required /></td>
+				</tr>
+				<tr>
+					<td><label>*Número de Documento</label></td>
+					<td><input type="text" name="num_docUser" placeholder="25.642.846" required /></td>
+				</tr>
+				<!---------------------------------------- FILA 3 DEL FORMUALARIO  ---------------------------------------->
+				<tr>
+					<td><label>*Domicilio</label></td>
+					<td><input type="text" name="domicilioUser" placeholder="9 de Julio 1265" required /></td>
+				</tr>
+				<tr>
+					<td><label>Dep./Piso</label></td>
+					<td><input type="text" name="depUser" placeholder="2do. C" /></td>
+				</tr>
+				<tr>
+					<td><label>*Localidad</label></td>
+					<td><input type="text" name="localidadUser" placeholder="Cipolletti" required /></td>
+				</tr>
+				<!---------------------------------------- FILA 4 DEL FORMUALARIO  ---------------------------------------->
+				<tr>
+					<td><label>*Celular/Teléfono</label></td>
+					<td><input type="number" name="celUser" placeholder="2654831567" required /></td>
+				</tr>
+				<tr>
+					<td><label>Teléfono 2</label></td>
+					<td><input type="number" name="telefonoUser" placeholder="" /></td>
+				</tr>
+				<tr>
+					<td><label>*Correo electronico</label></td>
+					<td><input type="text" name="emailuser" placeholder="example@mail.com" required /></td>
+				</tr>
+			</table>
+
+			<br>
+			
+			<h3>Datos Generales</h3>
+			<hr>
+			<!-------------------------------------------------- DATOS GENERALES FORMUALARIO -------------------------------------------------->
+			<table border="1">
+				<!---------------------------------------- FILA 1 DEL FORMUALARIO ---------------------------------------->
+				<tr>
+					<td><label>*Carrera a la que desea ingresar:</label></td>
+					<td><input type="text" name="carreraUser" placeholder="Seleccionar la Carrera..." required /></td>
+				</tr>
+				<tr>
+					<td><label>*Nivel Educativo:</label></td>
+					<td><input type="text" name="nivelUser" placeholder="Elegir Opción..." required /></td>
+				</tr>
+				<!---------------------------------------- FILA 2 DEL FORMUALARIO  ---------------------------------------->
+				<tr>
+					<td><label>*Institución de Graduación:</label></td>
+					<td><input type="text" name="inst_gradUser" required /></td>
+				</tr>
+				<tr>
+					<td><label>*Localidad:</label></td>
+					<td><input type="text" name="localidad_gradUser" placeholder="Cipolletti" required /></td>
+				</tr>
+				<tr>
+					<td><label>*Codigo Postal:</label></td>
+					<td><input type="number" name="cod_postal_InstUser" placeholder="8324" required /></td>
+				</tr>
+				<tr>
+					<td><label>*Provincia:</label></td>
+					<td><input type="text" name="provincia_InstUser" placeholder="Rio Negro" required /></td>
+				</tr>
+				<!---------------------------------------- FILA 3 DEL FORMUALARIO  ---------------------------------------->
+				<tr>
+					<td><label>*Fotos del Documento:</label></td>
+					<td><input type="text" name="img_docUser" placeholder="*Frontal y dorso..." required /><button>Subir imagen</button></td>
+				</tr>
+				<tr>
+					<td><label><input type="submit" value="Registrarme"></input></label></td>
+					<td><label><input type="reset" value="Reestablecer"></input></label></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+
+</html>
