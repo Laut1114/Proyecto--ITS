@@ -2,9 +2,8 @@
 CREATE DATABASE IF NOT EXISTS `formulario`;
 USE `formulario`;
 
--- --------------------------------------------------------
--- Tabla de datos
 
+-- Tabla de datos
 CREATE TABLE IF NOT EXISTS `datos_preinscripcion` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nombres` VARCHAR(50) NOT NULL,

@@ -3,7 +3,6 @@
 	$connect = mysqli_connect("localhost","root","", "formulario") or die("<h2>No se encuentra el servidor</h2>");
 
 	//Le damos los valores del formulario
-
 	// Datos Personales
 	$nombres = $_POST['nombreuser'];
 	$apellidos = $_POST['apellidosuser'];
