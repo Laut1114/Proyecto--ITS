@@ -1,0 +1,171 @@
+<br>
+<h3>Complete los siguientes datos</h3>
+<h6 style="color: rgba(255, 93, 0, 0.6);">(*) Campos obligatorios</h6>
+<br>
+<h4>Datos Personales</h4>
+<hr class="border border-danger border-1 opacity-75">
+<div class="container contenedor">
+  <form class="row g-3 needs-validation" novalidate action="registro.php" method="POST">
+    <div class="col-md-6">
+      <label for="validationCustom01" class="form-label">*Nombre Completo:</label>
+      <input type="text" class="form-control" id="validationCustom01" placeholder="Ej: Pepe" name="nombreuser" required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom02" class="form-label">*Apellido/s:</label>
+      <input type="text" class="form-control" id="validationCustom02" placeholder=" Ej: Argento" name="apellidosuser"
+        required>
+      <div class="valid-feedback">
+        Looks good!
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom03" class="form-label">*Fecha de Nacimiento:</label>
+      <input type="date" class="form-control" id="validationCustom03" name="fecha_nacimientoUSer" required>
+      <div class="invalid-feedback">
+        Please provide a valid city.
+      </div>
+
+    </div>
+    <div class="col-md-4">
+      <label for="validationCustom05" class="form-label">*Lugar de Nacimiento:</label>
+      <input type="text" class="form-control" id="validationCustom05" name="lugar_nacimientoUSer" required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+    <div class="col-md-2">
+      <label for="validationCustom04" class="form-label">*Tipo de Documento:</label>
+      <select class="form-select" id="validationCustom04" name="tipo_docUser" required>
+        <option selected disabled value="">Elegir Opcion...</option>
+        <option>Grupo 1?</option>
+        <option>Grupo 2?</option>
+        <option>Grupo 3?</option>
+      </select>
+      <div class="invalid-feedback">
+        Please select a valid state.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">*Numero de Documento:</label>
+      <input type="number" class="form-control" id="validationCustom05" name="num_docUser" required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+    <div class="col-md-7">
+      <label for="validationCustom05" class="form-label">*Domicilio:</label>
+      <input type="text" class="form-control" id="validationCustom05" name="domicilioUser" required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+    <div class="col-md-2">
+      <label for="validationCustom05" class="form-label">Dto./piso:</label>
+      <input type="text" class="form-control" id="validationCustom05" name="depUser" required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">*Localidad:</label>
+      <input type="text" class="form-control" id="validationCustom05" name="localidadUser" required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">*Celular/Telefono:</label>
+      <input type="number" class="form-control" id="validationCustom05" name="celUser" required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+    <div class="col-md-3">
+      <label for="validationCustom05" class="form-label">telefono 2:</label>
+      <input type="int" class="form-control" id="validationCustom05" name="telefonoUser" required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+    <div class="col-md-6">
+      <label for="validationCustom05" class="form-label">*Correo Electronico:</label>
+      <input type="text" class="form-control" id="validationCustom05" name="emailuser" required>
+      <div class="invalid-feedback">
+        Please provide a valid zip.
+      </div>
+    </div>
+  </form>
+</div>
+<br>
+<br>
+
+
+<h4>Datos Generales</h4>
+<hr class="border border-danger border-1 opacity-75">
+<form class="row g-3 needs-validation" novalidate action="registro.php" method="POST">
+  <div class="col-md-6">
+    <label for="validationCustom04" class="form-label">*Carrera a la que desea ingresar:</label>
+    <select class="form-select" id="validationCustom04" name="carreraUser" required>
+      <option selected disabled value="">Elegir Opcion...</option>
+      <option>Tecnico Superior en Desarrollo de Software Full Stack</option>
+      <option>Tecnico Superior en Infraestructura de Redes Full Stack</option>
+    </select>
+    <div class="invalid-feedback">
+      Please select a valid state.
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="validationCustom04" class="form-label">*Nivel Educativo:</label>
+    <select class="form-select" id="validationCustom04" name="nivelUser" required>
+      <option selected disabled value="">Elegir Opcion...</option>
+      <option>Secundario Incompleto</option>
+      <option>Secundario Completo</option>
+      <option>Carrera Terciaria Incompleto</option>
+      <option>Carrera Terciaria completo</option>
+      <option>Carrera Universitaria Incompleto</option>
+      <option>Carrera Universitaria Completo</option>
+    </select>
+    <div class="invalid-feedback">
+      Please select a valid state.
+    </div>
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom05" class="form-label">*Institucion de Graduacion:</label>
+    <input type="text" class="form-control" id="validationCustom05" name="inst_gradUser" required>
+    <div class="invalid-feedback">
+      Please provide a valid zip.
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label for="validationCustom05" class="form-label">*Localidad:</label>
+    <input type="text" class="form-control" id="validationCustom05" name="localidad_gradUser" required>
+    <div class="invalid-feedback">
+      Please provide a valid zip.
+    </div>
+  </div>
+  <div class="col-md-2">
+    <label for="validationCustom05" class="form-label">*Codigo Postal:</label>
+    <input type="number" class="form-control" id="validationCustom05" name="cod_postal_InstUser" required>
+    <div class="invalid-feedback">
+      Please provide a valid zip.
+    </div>
+  </div>
+  <div class="col-md-3">
+    <label for="validationCustom05" class="form-label">*Provincia:</label>
+    <input type="text" class="form-control" id="validationCustom05" name="provincia_InstUser" required>
+    <div class="invalid-feedback">
+      Please provide a valid zip.
+    </div>
+  </div>
+  <div class="mb-3 col-md-8">
+    <label for="formFileMultiple" class="form-label">*Fotos del Documento:</label>
+    <input class="form-control" type="file" id="formFileMultiple" name="img_docUser" multiple>
+  </div>
+  <div class="button-container">
+    <input type="submit" value="Enviar">
+  </div>
+
+</form>
