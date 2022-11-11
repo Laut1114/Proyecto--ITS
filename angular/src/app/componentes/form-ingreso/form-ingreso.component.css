@@ -1,86 +1,37 @@
-body{
-	color: #000;
-	margin: 0%;
-	font-family: monospace;
+hr {
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	border-top: 2.5px solid #FF5D00;;
 }
 
-.container {
-	position: relative;
-	height: 320px;
-	
-	background-size: cover;
+#color {
+	color: #FF5D00;
 }
 
-#barra {
+.spacer {
 	width: 100%;
-	height: 50px;
-	background-color: #FF5D00;
+	height: 45px;
 }
-
-#banner {
-	display: flex;
-	position: relative;
-	justify-content: flex-start;
-	top: 32%;
-	left: 10%;
-}
-
-#banner p {
-	position: static;
-	color: #ffff;
-	font-size: 30px;
-	font-family: monospace;
-	font-weight: bold;
-}
-
-#header {
-	position: absolute;
-	width: 80%;
-	height: 150px;
-	background-color: #F6F6F6;
-	border-radius: 12px;
-	margin-top: 20px;
-	margin-left: 10%;
-}
-
-#header p {
-	text-align: center;
-	font-size: 30px;
-	font-family: monospace;
-	font-weight: bold;
-}
-
-.content{
-	margin-right: 10%;
-	margin-left: 10%;
-}
-
-#subir_imagen {
-	width: 122px;
-	color: #F6F6F6;
-	background-color: #FF5D00;
-	border: none;
-	border-radius: 3px;
-}
-
 
 .button-container {
+	margin-top: 24px;
+	margin-bottom: 85px;
 	display: flex;
 	justify-content: flex-end;
 	width: 100%;
 	height: fit-content;
-	top: 24px;
 }
 
-.button-container input {
+.button-container button {
 	width: 190px;
 	height: 50px;
-	color: #F6F6F6;
-	background-color: rgba(255, 93, 0, 0.97);
+	color: #fff;
+	background-color: #FF5D00;
 	border: none;
 	border-radius: 5px;
 }
-.color{
-    color: #FF5D00;
- 
+
+.form-control:focus, .form-select:focus{
+	border-color: #FF5D00;
+ 	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgb(255, 93, 0);
 }

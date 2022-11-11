@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+<div class="header"></div>
+<br>
+<div class="conteiner">
+
+    <!-- SI ELIJE UNA CARRERA  -->
+    <div *ngIf="carrera[0] == '1'">
+        <div class="container-header">
+            <h4>Tecnico Superior en Desarrollo de Software Full Stack</h4>
+            <app-modal-form-plan></app-modal-form-plan>
+        </div>
+        <hr class="border-1 opacity-75">
+        <br>
+        <div class="row">
+            <div class="col">
+                <div class="info">
+                    <span class="badge">CANTIDAD DE AÑOS:</span>
+                    <span class="badge text-bg-secondary">3 AÑOS</span>
+                </div>
+                <br>
+                <div class="info">
+                    <span class="badge">CANTIDAD DE HORAS CATEDRA:</span>
+                    <span class="badge text-bg-secondary">300 HS</span>
+                </div>
+                <br>
+                <div class="info">
+                    <span class="badge">CANTIDAD DE MATERIAS:</span>
+                    <span class="badge text-bg-secondary">33 MATERIAS</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex justify-content-sm-around" style="height: 100%;">
+                    <div class="vr"></div>
+                    <img class="" src="./../../../assets/desarrollo.jpg" height="220">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------------------------------------------------------------------------------------------ -->
+
+    <!-- SI ELIJE OTRA CARRERA -->
+    <div *ngIf="carrera[0] == '2'">
+        <div class="container-header">
+            <h4>Técnico Superior en Soporte de Infraestructura de Tecnología de la Información</h4>
+            <app-modal-form-plan></app-modal-form-plan>
+        </div>
+        <hr class="border-1 opacity-75">
+        <br>
+        <div class="row">
+            <div class="col">
+                <div class="info">
+                    <span class="badge">CANTIDAD DE AÑOS:</span>
+                    <span class="badge text-bg-secondary">3 AÑOS</span>
+                </div>
+                <br>
+                <div class="info">
+                    <span class="badge">CANTIDAD DE HORAS CATEDRA:</span>
+                    <span class="badge text-bg-secondary">300 HS</span>
+                </div>
+                <br>
+                <div class="info">
+                    <span class="badge">CANTIDAD DE MATERIAS:</span>
+                    <span class="badge text-bg-secondary">33 MATERIAS</span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="d-flex justify-content-sm-around" style="height: 100%;">
+                    <div class="vr"></div>
+                    <img class="" src="./../../../assets/soporte.jpg" height="220">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ------------------------------------------------------------------------------------------------------------ -->
+    <br>
+
+    <app-tabla-planes></app-tabla-planes>
+
+</div>
+<app-footer></app-footer>

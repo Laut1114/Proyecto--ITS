@@ -1,0 +1,132 @@
+<!-- Button trigger modal -->
+<button id="modal-button" type="button" class="btn btn-outline" data-bs-toggle="modal" data-bs-target="#staticBack">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-fill"
+        viewBox="0 0 16 16">
+        <path
+            d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+    </svg>
+</button>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBack" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-xl">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Complete los siguientes datos</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="container">
+                    <form class="row g-3 needs-validation" novalidate action="" method="POST">
+                        <div class="col-md-7">
+                            <label for="validationCustom04" class="form-label">*Nombre de la carrera:</label>
+                            <select class="form-select" id="validationCustom04" name="carreraUser" required>
+                                <option selected disabled value="">Elegir Opcion...</option>
+                                <option>Tecnico Superior en Desarrollo de Software Full Stack</option>
+                                <option>Tecnico Superior en Infraestructura de Redes</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="validationCustom05" class="form-label">*Resolucion N°:</label>
+                            <input type="text/number" class="form-control" id="validationCustom05" name="resolucion_gradUser" required>
+                        </div>
+                        <div class="col-md-2">
+                            <label for="validationCustom05" class="form-label">*Cantidad Años:</label>
+                            <input type="number" class="form-control" id="validationCustom05" name="cantidad_años_InstUser" required>
+                        </div>
+                        <div class="col-md-7">
+                            <label for="validationCustom05" class="form-label">*Nombres de las materias:</label>
+                            <select class="form-select" id="validationCustom04" name="carreraUser" required>
+                                <option selected disabled value="">Elegir Opcion (TSDSFS-Desarollador Full Stack)</option>
+                                <option>TSDSFS:</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Matematica(Anual).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Diseño UX-UI(Cuatrimestal,Segundo Cuatrimestre).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Laboratorio Full Stack:</option>
+                                <option>Laboratorio Full Stack I(Anual).</option>
+                                <option>Laboratorio Full Stack II(Anual).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Ingles Tecnico:</option>
+                                <option>Ingles Tecnico I(Cuatrimestral,Primer Cuatrimestre).</option>
+                                <option>Ingles Tecnico II(Cuatrimestral,Primer Cuatrimestre).</option>
+                                <option>Ingles Tecnico III(Cuatrimestral,Primer Cuatrimestre).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Artitecturas de las Computadoras(Cuatrimestal,Primer Cuatrimestre).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Etica y Responsabilidad Social(Cuatrimestral,Primer Cuatrimestre).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Practica Profezinalizante:</option>
+                                <option>Practica Profezionalizante I(Cuatrimestral,Segundo Cuatrimestre).</option>
+                                <option>Practica Profezionalizante II(Cuatrimestral,Segundo Cuatrimestre).</option>
+                                <option>Practica Profezionalizante III(Anual).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Desarollo Web(Anual).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Desarollo Movil(Anual).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Gestion de Proyectos de Sotware(Anual).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Programacion Frontend(Anual).</option>
+                            </select>
+                            <br><br>
+                            <select class="form-select" id="validationCustom04" name="carreraUser" required>
+                                <option selected disabled value="">Elegir Opcion (TSSITI-SysAdmin)</option>
+                                <option>TSDSFS:</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Matematica:</option>
+                                <option>Matematica(Anual).</option>
+                                <option>Matematica(Cuatrimestral,Segundo Cuatrimestre).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Introducción a la Programación(Cuatrimestral,Segundo Cuatrimestre).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Práctica Profesionalizante:</option>
+                                <option>Práctica Profesionalizante I(Cuatrimestral,Segundo Cuatrimestre).</option>
+                                <option>Práctica Profesionalizante II(Cuatrimestral,Segundo Cuatrimestre).</option>
+                                <option>Práctica Profesionalizante III(Anual).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Base de Datos(Cuatrimestral,Segundo Cuatrimestre).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Inglés Técnico:</option>
+                                <option>Inglés Técnico I(Cuatrimestral,Segundo Cuatrimestre).</option>
+                                <option>Inglés Técnico II(Cuatrimestral,Primer Cuatrimestre).</option>
+                                <option>Inglés Técnico III(Cuatrimestral,Segundo Cuatrimestre).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Seguridad e Integridad de Sistemas y Redes(Cuatrimestral,Segundo Cuatrimestre).
+                                </option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Laboratorio de Informática :</option>
+                                <option>Laboratorio de Informática I(Cuatrimestral,Segundo Cuatrimestre).</option>
+                                <option>Laboratorio de Informática II(Anual).</option>
+                                <option>Laboratorio de Informática III(Anual).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Auditoría de Sistemas(Cuatrimestral,Primer Cuatrimestre).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Diagnóstico y Solución de Incidente(Cuatrimestral,Segundo Cuatrimestre).
+                                </option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Legislación(Cuatrimestral,Segundo Cuatrimestre).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Etica Profesional(Cuatrimestral,Primer Cuatrimestre).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Mantenimiento de Infraestructura(Cuatrimestral,Primer Cuatrimestre).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Analisis y Diseño de sistemas(Cuatrimestral,Primer Cuatrimestre).</option>
+                                <hr class="border border-danger border-1 opacity-75">
+                                <option>Redes de Datos(Cuatrimestral,Segundo Cuatrimestre).</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn" style="background-color: #FF5D00; color: #fff;">Actualizar</button>
+            </div>
+        </div>
+    </div>
+</div>

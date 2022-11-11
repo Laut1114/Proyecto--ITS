@@ -1,0 +1,155 @@
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+	position: absolute;
+	width: 80%;
+	height: max-content;
+	background-color: #fff;
+	border-radius: 12px;
+	box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+	top: 20px;
+	left: 10%;
+    padding: 0 2% 0 2%;
+}
+
+.menu {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+.btn-inicio {
+    position: relative;
+    display: inline-block;
+    padding: 15px 40px;
+    text-decoration: none;
+    font-size: 16px;
+    overflow: hidden;
+    transition: 0.2s;
+    color: rgb(0, 0, 0);
+}
+
+/* sombreado del boton */
+.btn-inicio:hover {
+    background: #ff5e00d7;
+    color: #fff;
+    box-shadow: 0 0 5px #e35c0e, 0 0 5px #e35c0e, 0 0 5px #e35c0e;
+    transition-delay: 1s;
+}
+
+.btn-inicio span {
+    position: absolute;
+    display: block;
+}
+
+nav ul li {
+    list-style: none;
+    margin-left: 40px;
+    float: left;
+    position: relative;
+}
+
+/* nav ul li a {
+    text-decoration: none;
+    color: #f0edeb;
+    font-weight: bold;
+    border: 1px solid #ccc;
+    background-color: #121111;
+    padding: 2px 7px 2px 7px;
+}
+
+nav ul li a::before {
+    display: block;
+    content: '';
+    width: 0%;
+    height: 5px;
+    top: 0;
+    position: absolute;
+    transition: width 0.2s;
+    padding: 10 px;
+    text-decoration: none;
+}
+
+nav ul li a:hover::before {
+    width: 100%;
+} */
+
+
+/* animacion lineas btn */
+#span1 {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #a14d1d);
+}
+
+.btn-inicio:hover #span1 {
+    left: 100%;
+    transition: 1s;
+}
+
+#span2 {
+    top: -100%;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, transparent, #a14d1d);
+}
+
+.btn-inicio:hover #span2 {
+    top: 100%;
+    transition: 1s;
+    transition-delay: 0.25s;
+}
+
+#span3 {
+    bottom: 0;
+    right: -100%;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(270deg, transparent, #a14d1d);
+}
+
+.btn-inicio:hover #span3 {
+    right: 100%;
+    transition: 1s;
+    transition-delay: 0.5s;
+}
+
+#span4 {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #a14d1d);
+}
+
+.btn-inicio:hover #span4 {
+    bottom: 100%;
+    transition: 1s;
+    transition-delay: 0.75s;
+}
+/* ------------------------------------------------------------------------------------------ */
+
+.buttons {
+    width: 18%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.buttons button:hover {
+    background: #ff5e00d7;
+    color: #ffffff;
+    border-radius: 8px;
+    transition: 0.5s;
+}

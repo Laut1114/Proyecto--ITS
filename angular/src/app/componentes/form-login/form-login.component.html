@@ -1,0 +1,31 @@
+<div id="container">
+    <!-- imagen del logo de la institucion -->
+    <div class="header-img">
+        <img src="./../../../assets/logo-institucion.png" alt="logoinstitucion">
+    </div>
+    <br>
+    <div class="form">
+        <h2>Inicio de Sesión</h2>
+        <hr class="border-1 opacity-75">
+        <br>
+        <form class="col" action="">
+            <div class="row-md-6">
+                <label for="validationCustom01" class="form-label">Nombre de Usuario:</label>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="user123" name="username" required>
+            </div>
+            <br>
+            <div class="row-md-6">
+                <label for="validationCustom02" class="form-label">Contraseña:</label>
+                <input type="password" class="form-control" id="validationCustom02" placeholder="********" name="passwordUser" required>
+            </div>
+        </form>
+        <!-- <div style="text-align: end;">
+            <a style="color: #898989;" href="">¿Olvidó su nombre de usuario o contraseña?</a>
+        </div> -->
+    </div>
+    <br>
+    <div class="buttons-container">
+        <button type="button" id="btn1" class="btn btn-primary btn-lg btn-block" routerLink="/">Ingresar</button>
+        <button type="button" class="btn btn-outline btn-lg btn-block" style="border-color: #FF5D00;" routerLink="/registro">Registrarse</button>
+    </div>
+</div>
