@@ -13,6 +13,16 @@ hr {
 	height: 45px;
 }
 
+.container-header {
+    display: flex;
+    justify-content: flex-start;
+	column-gap: 20px;
+}
+
+.container-header p {
+	font-size: x-large;
+}
+
 .button-container {
 	margin-top: 24px;
 	margin-bottom: 85px;
