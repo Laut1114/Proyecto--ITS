@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-form-login',
@@ -7,9 +10,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormLoginComponent implements OnInit {
 
-  constructor() { }
+  formLogin!: FormGroup;
+
+  loading = false;
+
+  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { 
+    this.formLogin = this.fb.group({
+      email_user: ['', Validators.email],
+      password_user: ['', Validators.minLength(8)]
+    })
+  }
 
   ngOnInit(): void {
+  }
+
+  login(email: string, password: string) {
+
+    this.authService.login(email, password).then((credenciales) => {
+      if(!credenciales) {
+
+        // AGREGAR 
+        alert('datos incorrectos')
+        return false;
+      }
+
+      this.loading = true
+
+      return this.router.navigate(['/']);
+    });
+
   }
 
 }

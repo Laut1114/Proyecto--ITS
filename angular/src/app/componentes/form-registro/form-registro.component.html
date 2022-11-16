@@ -12,37 +12,34 @@
             <h6 id="color">(*) Campos obligatorios</h6>
         </div>
         <br>
-        <form class="row g-3" action="">
+        <form [formGroup]="formRegister" class="row g-3">
             <div class="row-md-6">
-                <label for="validationCustom01" class="form-label"><span id="font-color">*</span>Nombre de
-                    Usuario:</label>
-                <input type="text" class="form-control" id="validationCustom01" placeholder="user123" name="username"
-                    required>
+                <label for="validationCustom01" class="form-label"><span id="font-color">*</span>Nombre de Usuario:</label>
+                <input type="text" class="form-control" id="validationCustom01" placeholder="user123" formControlName="username">
             </div>
             <br>
             <div class="col-md-6">
-                <label for="validationCustom05" class="form-label"><span id="font-color">*</span>Primer Nombre:</label>
-                <input type="text" class="form-control" id="validationCustom05" name="primer_nombre_gradUser" required>
+                <label for="validationCustom05" class="form-label"><span id="font-color">*</span>Nombre/s:</label>
+                <input type="text" class="form-control" placeholder="Nombre completo" formControlName="nombre_user" required>
             </div>
             <div class="col-md-6">
-                <label for="validationCustom05" class="form-label">Segundo Nombre:</label>
-                <input type="text" class="form-control" id="validationCustom05" name="seg_nombre_InstUser">
+                <label for="validationCustom05" class="form-label">Apellido:</label>
+                <input type="text" class="form-control" placeholder="Apellido completo" formControlName="apellido_user" required>
             </div>
             <br>
             <div class="col-md-7">
                 <label for="validationCustom05" class="form-label"><span id="font-color">*</span>Email:</label>
-                <input type="text" class="form-control" id="validationCustom05" name="email_InstUser" required>
+                <input type="email" class="form-control" placeholder="example@gmail.com" formControlName="email_user" required>
             </div>
             <div class="col-md-5">
                 <label for="validationCustom02" class="form-label"><span id="font-color">*</span>Contraseña:</label>
-                <input type="password" class="form-control" id="validationCustom02" placeholder="********"
-                    name="passwordUser" required>
+                <input type="password" class="form-control" placeholder="Debe tener mas de 8 caracteres" formControlName="password_user" required>
             </div>
         </form>
     </div>
     <br>
     <div class="buttons-container">
-        <button type="button" id="btn1" class="btn btn-primary btn-lg btn-block" routerLink="/">Registrarse</button>
+        <button type="button" id="btn1" class="btn btn-primary btn-lg btn-block" [disabled]="formRegister.invalid" (click)="registrarse(formRegister.value)">Registrarse</button>
         <a type="button" style="color: #FF5D00; text-decoration: underline;" routerLink="/login">Volver al login</a>
     </div>
 </div>

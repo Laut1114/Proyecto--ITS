@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
 import { FormIngresoComponent } from './componentes/form-ingreso/form-ingreso.component';
 import { InicioComponent } from './pages/inicio/inicio.component';
@@ -18,6 +19,15 @@ import { ModalComponent } from './componentes/modal/modal.component';
 import { TablaPlanesComponent } from './componentes/tabla-planes/tabla-planes.component';
 import { PlanesEstudioComponent } from './pages/planes-estudio/planes-estudio.component';
 import { ModalFormPlanComponent } from './componentes/modal-form-plan/modal-form-plan.component';
+
+
+import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideAuth, getAuth } from '@angular/fire/auth';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { provideStorage, getStorage } from '@angular/fire/storage';
+import { PERSISTENCE } from '@angular/fire/compat/auth';
+import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 
 
 @NgModule({
@@ -42,8 +52,17 @@ import { ModalFormPlanComponent } from './componentes/modal-form-plan/modal-form
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()),
   ],
-  providers: [],
+  providers: [
+    { provide: PERSISTENCE, useValue: 'session' },
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebase }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
