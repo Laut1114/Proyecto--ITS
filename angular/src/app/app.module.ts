@@ -19,7 +19,8 @@ import { ModalComponent } from './componentes/modal/modal.component';
 import { TablaPlanesComponent } from './componentes/tabla-planes/tabla-planes.component';
 import { PlanesEstudioComponent } from './pages/planes-estudio/planes-estudio.component';
 import { ModalFormPlanComponent } from './componentes/modal-form-plan/modal-form-plan.component';
-
+import { ModalFormCarreraComponent } from './componentes/modal-form-carrera/modal-form-carrera.component';
+import { RecaptchaModule } from "ng-recaptcha";
 
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
@@ -28,6 +29,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { PERSISTENCE } from '@angular/fire/compat/auth';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+
 
 
 @NgModule({
@@ -47,12 +49,14 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     ModalComponent,
     TablaPlanesComponent,
     PlanesEstudioComponent,
-    ModalFormPlanComponent
+    ModalFormPlanComponent,
+    ModalFormCarreraComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    RecaptchaModule,
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),

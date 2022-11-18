@@ -1,7 +1,7 @@
 <div class="spacer"></div>
 
 <div class="container-header">
-  <button id="home-button" type="button" class="btn btn-outline" routerLink="/">
+    <button id="home-button" type="button" class="btn btn-outline" routerLink="/">
     <!-- <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
       <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z"/>
     </svg> -->
@@ -9,105 +9,86 @@
       <path fill-rule="evenodd" d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5ZM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5Z"/>
     </svg>
   </button>
-  <p style="font-size: 26px; font-weight: 500;">Complete los siguientes datos <br>
-    <span style="color: #8d8d8d; font-size: 16px;">(*) Campos obligatorios</span>
-  </p>
+    <p style="font-size: 26px; font-weight: 500;">Complete los siguientes datos <br>
+        <span style="color: #8d8d8d; font-size: 16px;">(*) Campos obligatorios</span>
+    </p>
 </div>
 
 <br>
 
 <div class="contenedor">
-  <h4>Datos Personales</h4>
-  <hr class="border-1 opacity-75">
-  <form class="row g-3" action="registro.php" method="POST">
-    <div class="col-md-6">
-      <label for="validationCustom01" class="form-label"><span id="color">*</span>Nombre Completo:</label>
-      <input type="text" class="form-control" id="validationCustom01" placeholder="Ej: Pepe" name="nombreuser" required>
-    </div>
+    <h4>Datos Personales</h4>
+    <hr class="border-1 opacity-75">
 
-    <div class="col-md-6">
-      <label for="validationCustom02" class="form-label"><span id="color">*</span>Apellido/s:</label>
-      <input type="text" class="form-control" id="validationCustom02" placeholder=" Ej: Argento" name="apellidosuser"
-        required>
-    </div>
+    <form [formGroup]="formIngreso" class="row g-3" >
+        <div class="col-md-6">
+            <label for="validationCustom01" class="form-label"><span id="color">*</span>Nombre:</label>
+            <input type="text" class="form-control" id="validationCustom01" formControlName="nombre" placeholder="Ej: Pepe" name="nombre">
+        </div>
 
-    <div class="col-md-3">
-      <label for="validationCustom03" class="form-label"><span id="color">*</span>Fecha de Nacimiento:</label>
-      <input type="date" class="form-control" id="validationCustom03" name="fecha_nacimientoUSer" required>
-    </div>
+        <div class="col-md-6">
+            <label for="validationCustom02" class="form-label"><span id="color">*</span>Apellido/s:</label>
+            <input type="text" class="form-control" id="validationCustom02" formControlName="apellido" placeholder="Ej: Argento" name="apellido">
+        </div>
 
-    <div class="col-md-4">
-      <label for="validationCustom05" class="form-label"><span id="color">*</span>Lugar de Nacimiento:</label>
-      <input type="text" class="form-control" id="validationCustom05" name="lugar_nacimientoUSer" required>
-    </div>
+        <div class="col-md-3 ">
+            <label for="validationCustom03 " class="form-label "><span id="color ">*</span>Fecha de Nacimiento:</label>
+            <input type="date " class="form-control " id="validationCustom03 " formControlName="fecha_nacimiento">
+        </div>
 
-    <div class="col-md-2">
-      <label for="validationCustom04" class="form-label"><span id="color">*</span>Tipo de Documento:</label>
-      <select class="form-select" id="validationCustom04" name="tipo_docUser" required>
-        <option selected disabled value="">Elegir Opcion...</option>
-        <option>D.N.I. - Documento Nacional de Identidad </option>
-        <option>C.I - Cédula de Identidad</option>
-        <!-- <option>Grupo 3?</option> -->
-      </select>
-    </div>
+        <div class="col-md-4 ">
+            <label for="validationCustom05 " class="form-label "><span id="color ">*</span>Nacionalidad:</label>
+            <input type="text " class="form-control " id="validationCustom05 " formControlName="nacionalidad">
+        </div>
 
-    <div class="col-md-3">
-      <label for="validationCustom05" class="form-label"><span id="color">*</span>Numero de Documento:</label>
-      <input type="number" class="form-control" id="validationCustom05" name="num_docUser" required>
-    </div>
+        <div class="col-md-2 ">
+            <label for="validationCustom04 " class="form-label "><span id="color ">*</span>DNI:</label>
+            <input type="number " class="form-control " id="validationCustom04 " formControlName="numDoc">
 
-    <div class="col-md-7">
-      <label for="validationCustom05" class="form-label"><span id="color">*</span>Domicilio:</label>
-      <input type="text" class="form-control" id="validationCustom05" name="domicilioUser" required>
-    </div>
+        </div>
 
-    <div class="col-md-2">
-      <label for="validationCustom05" class="form-label">Dto./piso:</label>
-      <input type="text" class="form-control" id="validationCustom05" name="depUser" required>
-    </div>
+        <div class="col-md-7 ">
+            <label for="validationCustom05 " class="form-label "><span id="color ">*</span>Domicilio:</label>
+            <input type="text " class="form-control " id="validationCustom05 " formControlName="domicilio">
+        </div>
 
-    <div class="col-md-3">
-      <label for="validationCustom05" class="form-label"><span id="color">*</span>Localidad:</label>
-      <input type="text" class="form-control" id="validationCustom05" name="localidadUser" required>
-    </div>
+        <div class="col-md-3 ">
+            <label for="validationCustom05 " class="form-label "><span id="color ">*</span>Ciudad:</label>
+            <input type="text " class="form-control " id="validationCustom05 " formControlName="ciudad">
+        </div>
 
-    <div class="col-md-3">
-      <label for="validationCustom05" class="form-label"><span id="color">*</span>Celular/Telefono:</label>
-      <input type="number" class="form-control" id="validationCustom05" name="celUser" required>
-    </div>
+        <div class="col-md-3 ">
+            <label for="validationCustom05 " class="form-label "><span id="color ">*</span>Celular/Telefono:</label>
+            <input type="number " class="form-control " id="validationCustom05 " formControlName="telefono">
+        </div>
 
-    <div class="col-md-3">
-      <label for="validationCustom05" class="form-label">telefono 2:</label>
-      <input type="number" class="form-control" id="validationCustom05" name="telefonoUser" required>
-    </div>
 
-    <div class="col-md-6">
-      <label for="validationCustom05" class="form-label"><span id="color">*</span>Correo Electronico:</label>
-      <input type="text" class="form-control" id="validationCustom05" name="emailuser" required>
-    </div>
+        <div class="col-md-6 ">
+            <label for="validationCustom05 " class="form-label "><span id="color ">*</span>Correo Electronico:</label>
+            <input type="text " class="form-control " id="validationCustom05 " formControlName="email">
+        </div>
 
-  </form>
 
-  <div class="spacer"></div>
+    <div class="spacer "></div>
 
-  <h4>Datos Generales</h4>
-  <hr class="border-1 opacity-75">
-  <form class="row g-3 needs-validation" novalidate action="registro.php" method="POST">
+    <h4>Datos Generales</h4>
+    <hr class="border-1 opacity-75 ">
+  
 
-    <div class="col-md-6">
-      <label for="validationCustom04" class="form-label"><span id="color">*</span>Carrera a la que desea
+        <div class="col-md-6 ">
+            <label for="validationCustom04 " class="form-label "><span id="color ">*</span>Carrera a la que desea
         ingresar:</label>
-      <select class="form-select" id="validationCustom04" name="carreraUser" required>
-        <option selected disabled value="">Elegir Opcion...</option>
+            <select class="form-select" id="validationCustom04 " formControlName="carrera">
+        <option selected disabled value=" ">Elegir Opcion...</option>
         <option>Tecnico Superior en Desarrollo de Software Full Stack</option>
         <option>Tecnico Superior en Infraestructura de Redes Full Stack</option>
       </select>
-    </div>
+        </div>
 
-    <div class="col-md-6">
-      <label for="validationCustom04" class="form-label"><span id="color">*</span>Nivel Educativo:</label>
-      <select class="form-select" id="validationCustom04" name="nivelUser" required>
-        <option selected disabled value="">Elegir Opcion...</option>
+        <div class="col-md-6 ">
+            <label for="validationCustom04 " class="form-label "><span id="color">*</span>Nivel Educativo:</label>
+            <select class="form-select " id="validationCustom04 " formControlName="nivelUser">
+        <option selected disabled value=" ">Elegir Opcion...</option>
         <option>Secundario Incompleto</option>
         <option>Secundario Completo</option>
         <option>Carrera Terciaria Incompleto</option>
@@ -115,40 +96,24 @@
         <option>Carrera Universitaria Incompleto</option>
         <option>Carrera Universitaria Completo</option>
       </select>
-      <div class="invalid-feedback">
-        Please select a valid state.
-      </div>
-    </div>
+            <div class="invalid-feedback ">
+                Please select a valid state.
+            </div>
+        </div>
+        <div class="col-md-3 ">
+            <label for="validationCustom05 " class="form-label "><span id="color ">*</span>Provincia:</label>
+            <input type="text " class="form-control " id="validationCustom05 " formControlName="provincia">
+        </div>
 
-    <div class="col-md-4">
-      <label for="validationCustom05" class="form-label"><span id="color">*</span>Institucion de Graduacion:</label>
-      <input type="text" class="form-control" id="validationCustom05" name="inst_gradUser" required>
-    </div>
+        <div class="mb-3 col-md-7 ">
+            <label for="formFileMultiple " class="form-label "><span id="color ">*</span>Fotos del Documento:</label>
+            <input class="form-control " type="file" id="formFileMultiple" formControName="fotoDNI" required (change)="obtenerImagen($event)">
+        </div>
+         <div class="button-container">
+       
+     <button type="button"  (click)="enviaringreso()">Enviar</button>
+    </div> 
+    </form>
 
-    <div class="col-md-3">
-      <label for="validationCustom05" class="form-label"><span id="color">*</span>Localidad:</label>
-      <input type="text" class="form-control" id="validationCustom05" name="localidad_gradUser" required>
-    </div>
-
-    <div class="col-md-2">
-      <label for="validationCustom05" class="form-label"><span id="color">*</span>Codigo Postal:</label>
-      <input type="number" class="form-control" id="validationCustom05" name="cod_postal_InstUser" required>
-    </div>
-
-    <div class="col-md-3">
-      <label for="validationCustom05" class="form-label"><span id="color">*</span>Provincia:</label>
-      <input type="text" class="form-control" id="validationCustom05" name="provincia_InstUser" required>
-    </div>
-
-    <div class="mb-3 col-md-7">
-      <label for="formFileMultiple" class="form-label"><span id="color">*</span>Fotos del Documento:</label>
-      <input class="form-control" type="file" id="formFileMultiple" name="img_docUser" multiple>
-    </div>
-
-    <div class="button-container">
-      <button type="submit">Enviar</button>
-    </div>
-
-  </form>
-
+     <re-captcha (resolved)="resolved($event)" siteKey="6LdpX9QiAAAAAMSJVt-_XIQ2fmyVOIlGpfL10oap"></re-captcha> 
 </div>

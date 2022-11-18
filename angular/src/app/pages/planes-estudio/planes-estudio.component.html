@@ -6,8 +6,10 @@
     <!-- SI ELIJE UNA CARRERA  -->
     <div *ngIf="carrera[0] == '1'">
         <div class="container-header">
-            <h4>Tecnico Superior en Desarrollo de Software Full Stack</h4>
-            <app-modal-form-plan></app-modal-form-plan>
+            <h4>{{carreras[0] && carreras[0].nombre_carrera}}</h4>
+            <div *ngIf="login && userRol == 'admin' || userRol == 'director'">
+                <app-modal-form-plan></app-modal-form-plan>
+            </div>
         </div>
         <hr class="border-1 opacity-75">
         <br>
@@ -15,17 +17,17 @@
             <div class="col">
                 <div class="info">
                     <span class="badge">CANTIDAD DE AÑOS:</span>
-                    <span class="badge text-bg-secondary">3 AÑOS</span>
+                    <span class="badge text-bg-secondary">{{carreras[0] && carreras[0].cant_anios}} AÑOS</span>
                 </div>
                 <br>
                 <div class="info">
                     <span class="badge">CANTIDAD DE HORAS CATEDRA:</span>
-                    <span class="badge text-bg-secondary">300 HS</span>
+                    <span class="badge text-bg-secondary">{{carreras[0] && carreras[0].cant_horas}} HS</span>
                 </div>
                 <br>
                 <div class="info">
                     <span class="badge">CANTIDAD DE MATERIAS:</span>
-                    <span class="badge text-bg-secondary">33 MATERIAS</span>
+                    <span class="badge text-bg-secondary">{{carreras[0] && carreras[0].cant_materias}} MATERIAS</span>
                 </div>
             </div>
             <div class="col">
@@ -41,8 +43,10 @@
     <!-- SI ELIJE OTRA CARRERA -->
     <div *ngIf="carrera[0] == '2'">
         <div class="container-header">
-            <h4>Técnico Superior en Soporte de Infraestructura de Tecnología de la Información</h4>
-            <app-modal-form-plan></app-modal-form-plan>
+            <h4>{{carreras[1] && carreras[1].nombre_carrera}}</h4>
+            <div *ngIf="login && userRol == 'admin' || userRol == 'director'">
+                <app-modal-form-plan></app-modal-form-plan>
+            </div>
         </div>
         <hr class="border-1 opacity-75">
         <br>
@@ -50,17 +54,17 @@
             <div class="col">
                 <div class="info">
                     <span class="badge">CANTIDAD DE AÑOS:</span>
-                    <span class="badge text-bg-secondary">3 AÑOS</span>
+                    <span class="badge text-bg-secondary">{{carreras[1] && carreras[1].cant_anios}} AÑOS</span>
                 </div>
                 <br>
                 <div class="info">
                     <span class="badge">CANTIDAD DE HORAS CATEDRA:</span>
-                    <span class="badge text-bg-secondary">300 HS</span>
+                    <span class="badge text-bg-secondary">{{carreras[1] && carreras[1].cant_horas}} HS</span>
                 </div>
                 <br>
                 <div class="info">
                     <span class="badge">CANTIDAD DE MATERIAS:</span>
-                    <span class="badge text-bg-secondary">33 MATERIAS</span>
+                    <span class="badge text-bg-secondary">{{carreras[1] && carreras[1].cant_materias}} MATERIAS</span>
                 </div>
             </div>
             <div class="col">

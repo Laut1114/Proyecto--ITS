@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthService } from 'src/app/services/auth/auth.service';
 
 @Component({
   selector: 'app-form-login',
@@ -11,8 +11,6 @@ import { AuthService } from 'src/app/services/auth.service';
 export class FormLoginComponent implements OnInit {
 
   formLogin!: FormGroup;
-
-  loading = false;
 
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { 
     this.formLogin = this.fb.group({
@@ -25,20 +23,14 @@ export class FormLoginComponent implements OnInit {
   }
 
   login(email: string, password: string) {
-
     this.authService.login(email, password).then((credenciales) => {
       if(!credenciales) {
-
         // AGREGAR 
-        alert('datos incorrectos')
+        alert('datos incorrectos');
         return false;
       }
-
-      this.loading = true
-
+      
       return this.router.navigate(['/']);
     });
-
   }
-
 }
