@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { CarreraInterface } from 'src/app/models/plan-estudio';
 import { PlanEstudioService } from 'src/app/services/plan_estudio/plan-estudio.service';
 
@@ -10,9 +10,9 @@ import { PlanEstudioService } from 'src/app/services/plan_estudio/plan-estudio.s
 })
 export class ModalFormCarreraComponent implements OnInit {
 
-  formCarrera!: FormGroup;
+  formCarrera!: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder, private planService: PlanEstudioService) {
+  constructor(private fb: UntypedFormBuilder, private planService: PlanEstudioService) {
     this.formCarrera = this.fb.group({
       nombre_carrera: ['', Validators.required],
       cant_anios: ['', Validators.required],

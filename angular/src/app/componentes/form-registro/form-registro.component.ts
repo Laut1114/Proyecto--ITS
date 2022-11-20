@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserInterface } from 'src/app/models/user';
 import { AuthService } from 'src/app/services/auth/auth.service';
@@ -11,9 +11,9 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class FormRegistroComponent implements OnInit {
 
-  formRegister!: FormGroup;
+  formRegister!: UntypedFormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) { 
+  constructor(private fb: UntypedFormBuilder, private authService: AuthService, private router: Router) { 
     this.formRegister = this.fb.group({
       username: ['', Validators.maxLength(16)],
       nombre_user: ['', Validators.required],

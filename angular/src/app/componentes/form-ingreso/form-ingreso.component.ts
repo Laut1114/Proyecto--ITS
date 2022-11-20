@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
-import { Prere } from 'src/app/models/prere';
+// import { Router } from '@angular/router';
+// import { Prere } from 'src/app/models/prere';
 import { PreInscripcionService } from 'src/app/services/pre_inscripcion/pre-inscripcion.service';
 
 @Component({

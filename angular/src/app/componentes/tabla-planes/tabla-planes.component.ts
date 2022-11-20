@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { PlanEstudioInterface } from 'src/app/models/plan-estudio';
 import { AuthService } from 'src/app/services/auth/auth.service';
@@ -19,12 +19,12 @@ export class TablaPlanesComponent implements OnInit {
 
   edit: boolean = false;
 
-  formEdit!: FormGroup;
+  formEdit!: UntypedFormGroup;
 
   login!: boolean;
   userRol: any;
 
-  constructor(private planService: PlanEstudioService, private route: ActivatedRoute, private fb: FormBuilder, private authService: AuthService) {
+  constructor(private planService: PlanEstudioService, private route: ActivatedRoute, private fb: UntypedFormBuilder, private authService: AuthService) {
     this.route.queryParams.subscribe(_params => {
       this.carrera = _params['carrera'];
     });

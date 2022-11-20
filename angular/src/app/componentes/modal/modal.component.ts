@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder,Validators } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder,Validators } from '@angular/forms';
 import { ModalService } from 'src/app/services/modal/modal.service';
 import { PreInscripcionService } from 'src/app/services/pre_inscripcion/pre-inscripcion.service';
 
@@ -10,8 +10,8 @@ import { PreInscripcionService } from 'src/app/services/pre_inscripcion/pre-insc
 })
 export class ModalComponent implements OnInit {
 
-  formModal!: FormGroup;
-  constructor(private builder: FormBuilder, private datosService: ModalService)  { 
+  formModal!: UntypedFormGroup;
+  constructor(private builder: UntypedFormBuilder, private datosService: ModalService)  { 
 
     this.formModal = this.builder.group({
       nombre: ['', Validators.required],

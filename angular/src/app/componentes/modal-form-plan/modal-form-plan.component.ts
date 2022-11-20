@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { UntypedFormGroup, UntypedFormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { CarreraInterface } from 'src/app/models/plan-estudio';
 import { PlanEstudioService } from 'src/app/services/plan_estudio/plan-estudio.service';
@@ -11,13 +11,13 @@ import { PlanEstudioService } from 'src/app/services/plan_estudio/plan-estudio.s
 })
 export class ModalFormPlanComponent implements OnInit {
 
-  formCarrera!: FormGroup;
+  formCarrera!: UntypedFormGroup;
   carreras: CarreraInterface[] = [];
   carrera: string = "";
 
   idCarrera!: string;
 
-  constructor(private fb: FormBuilder, private planService: PlanEstudioService, private route: ActivatedRoute) {
+  constructor(private fb: UntypedFormBuilder, private planService: PlanEstudioService, private route: ActivatedRoute) {
     this.formCarrera = this.fb.group({
       nombre_carrera: [''],
       cant_anios: [''],
