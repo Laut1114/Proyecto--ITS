@@ -3,6 +3,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
 import { AngularFireStorage } from '@angular/fire/compat/storage'
 import { Prere } from '../../models/prere';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -29,6 +30,12 @@ export class PreInscripcionService {
 
       }
     })
+  }
+
+  getAlumnos() {
+    return this.preColletion.snapshotChanges().pipe(
+      map(action => action.map(a => a.payload.doc.data() as Prere))
+    );
   }
 
   // subirImagen(file: File, preUsuario: Prere) {

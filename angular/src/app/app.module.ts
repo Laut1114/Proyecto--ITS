@@ -29,6 +29,7 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { provideStorage, getStorage } from '@angular/fire/storage';
 import { PERSISTENCE } from '@angular/fire/compat/auth';
 import { FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { PdfmakeComponent } from './componentes/pdfmake/pdfmake.component';
 
 
 
@@ -51,6 +52,7 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
     PlanesEstudioComponent,
     ModalFormPlanComponent,
     ModalFormCarreraComponent,
+    PdfmakeComponent,
   ],
   imports: [
     BrowserModule,

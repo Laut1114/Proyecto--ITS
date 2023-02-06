@@ -12,4 +12,8 @@ export class IngresoComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  createPdf() {
+    
+  }
+
 }

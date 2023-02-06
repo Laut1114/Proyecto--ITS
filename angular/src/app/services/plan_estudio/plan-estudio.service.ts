@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/compat/firestore';
 import { arrayRemove, arrayUnion } from '@angular/fire/firestore';
-import { merge } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { CarreraInterface, PlanEstudioInterface } from 'src/app/models/plan-estudio';
 
