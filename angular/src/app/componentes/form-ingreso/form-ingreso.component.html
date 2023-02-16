@@ -66,7 +66,7 @@
 
         <div class="col-md-6 ">
             <label for="validationCustom05 " class="form-label "><span id="color ">*</span>Correo Electronico:</label>
-            <input type="text " class="form-control " id="validationCustom05 " formControlName="email">
+            <input type="email " class="form-control " id="validationCustom05 " formControlName="email">
         </div>
 
 
@@ -109,7 +109,7 @@
         <div class="mb-3 col-md-7 ">
             <label for="formFileMultiple " class="form-label "><span id="color ">*</span>Fotos del Documento:</label>
             <input class="form-control " type="file" id="formFileMultiple" formControName="fotoDNI" required
-                (change)="obtenerImagen($event)"> -->
+                (change)="obtenerImagen($event)">
         </div>
         <div class="button-container">
             <button type="submit" [disabled]="formIngreso.invalid" (click)="enviaringreso()">Enviar</button>
