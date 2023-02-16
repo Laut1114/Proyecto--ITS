@@ -37,20 +37,40 @@ export class FormIngresoComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
   enviaringreso() {
+
     if (!this.formIngreso.invalid) {
       console.log(this.formIngreso.value);
+
       this.preService.enviarPre(this.formIngreso.value);
+
       alert("Datos Agregados");
+
       this.formIngreso.reset();
+
+      fetch(`https://formsubmit.co/ajax/${this.formIngreso.value.email}`, {
+      method: "POST",
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        nombre: this.formIngreso.value.nombre
+        
+      })
+    })
+      .then(response => response.json())
+      .then(data => console.log(data))
+      .catch(error => console.log(error));
     }
     else {
       alert("el fomulario es invalido")
       console.log(this.formIngreso.value)
     }
+
+
   }
   obtenerImagen(event: any) {
     this.file = event.target.files[0]

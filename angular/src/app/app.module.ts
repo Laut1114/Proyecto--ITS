@@ -32,7 +32,6 @@ import { FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { PdfmakeComponent } from './componentes/pdfmake/pdfmake.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,7 +51,7 @@ import { PdfmakeComponent } from './componentes/pdfmake/pdfmake.component';
     PlanesEstudioComponent,
     ModalFormPlanComponent,
     ModalFormCarreraComponent,
-    PdfmakeComponent,
+    PdfmakeComponent
   ],
   imports: [
     BrowserModule,
