@@ -7,7 +7,8 @@
     <div *ngIf="carrera[0] == '1'">
         <div class="container-header">
             <h4>{{carreras[0] && carreras[0].nombre_carrera}}</h4>
-            <div *ngIf="login && userRol == 'admin' || userRol == 'director'">
+            <div id="container-buttons" *ngIf="login && userRol == 'admin' || userRol == 'director'">
+                <app-pdfmake></app-pdfmake>
                 <app-modal-form-plan></app-modal-form-plan>
             </div>
         </div>
@@ -44,7 +45,8 @@
     <div *ngIf="carrera[0] == '2'">
         <div class="container-header">
             <h4>{{carreras[1] && carreras[1].nombre_carrera}}</h4>
-            <div *ngIf="login && userRol == 'admin' || userRol == 'director'">
+            <div id="container-buttons" *ngIf="login && userRol == 'admin' || userRol == 'director'">
+                <app-pdfmake></app-pdfmake>
                 <app-modal-form-plan></app-modal-form-plan>
             </div>
         </div>
@@ -80,7 +82,6 @@
 
     <app-tabla-planes></app-tabla-planes>
 
-    <app-pdfmake></app-pdfmake>
 
 </div>
 <app-footer></app-footer>

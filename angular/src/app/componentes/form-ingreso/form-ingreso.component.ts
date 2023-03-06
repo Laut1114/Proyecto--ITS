@@ -19,7 +19,6 @@ export class FormIngresoComponent implements OnInit {
 
   formIngreso!: FormGroup;
   constructor(private fb: FormBuilder, private preService: PreInscripcionService) {
-
     this.formIngreso = this.fb.group({
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
@@ -42,13 +41,11 @@ export class FormIngresoComponent implements OnInit {
   enviaringreso() {
 
     if (!this.formIngreso.invalid) {
-      console.log(this.formIngreso.value.email);
-
-      // this.preService.enviarPre(this.formIngreso.value);
+      this.preService.enviarPre(this.formIngreso.value);
 
       alert("Datos Agregados");
 
-      // this.formIngreso.reset();
+      this.formIngreso.reset();
 
       fetch(`https://formsubmit.co/ajax/${this.formIngreso.value.email}`, {
         method: "POST",
@@ -69,14 +66,11 @@ export class FormIngresoComponent implements OnInit {
           nivelUser: this.formIngreso.value.nivelUser,
           ciudad: this.formIngreso.value.ciudad,
           provincia: this.formIngreso.value.provincia,
-          // fotoDNI: this.formIngreso.value.fotoDNI
         })
-      }).then(response => response.json()).then(data => console.log(data)).catch(error => console.log(error + this.formIngreso.value.email));
-    }
+      }).then(response => response.json()).catch(error => console.log(error));
 
-    else {
+    } else {
       alert("el fomulario es invalido")
-      console.log(this.formIngreso.value)
     }
 
   }
@@ -84,4 +78,5 @@ export class FormIngresoComponent implements OnInit {
   obtenerImagen(event: any) {
     this.file = event.target.files[0]
   }
+
 }

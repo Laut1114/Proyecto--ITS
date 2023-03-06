@@ -33,4 +33,12 @@ export class FormLoginComponent implements OnInit {
       return this.router.navigate(['/']);
     });
   }
+
+  recuperarContra(email: string) {
+    if (!email) {
+      alert('Por favor complete el campo de email');
+    } else {
+      this.authService.forgotPassword(email).then(() => alert('Correo de restauración enviado')).catch(err => console.log(err));
+    }
+  }
 }

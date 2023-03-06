@@ -104,7 +104,7 @@ export class TablaPlanesComponent implements OnInit {
     this.planEstudio.materias.push(this.formEdit.value);
   }
 
-  elimanrMateria(editData: any) {
+  eliminarMateria(editData: any) {
     this.planService.deleteMateria(this.ids, editData)
   }
 }

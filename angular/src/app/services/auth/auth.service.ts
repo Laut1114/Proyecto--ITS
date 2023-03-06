@@ -22,13 +22,16 @@ export class AuthService {
   }
 
   //RECUPERAR CONTRASEÑA
-  async forgotPassword() {
-
+  async forgotPassword(email: string) {
+    return await this.auth.sendPasswordResetEmail(email);
   }
 
   //CREAR UN NUEVO USUARIO CON EMAIL Y CONTRASEÑA
   async register(user: any) {
-    return await this.auth.createUserWithEmailAndPassword(user.email_user, user.password_user).then(credenciales => this.setUserData(credenciales.user!.uid, user).catch(err => console.log(err)));
+    return await this.auth.createUserWithEmailAndPassword(user.email_user, user.password_user).then(credenciales => {
+      credenciales.user?.sendEmailVerification();
+      this.setUserData(credenciales.user!.uid, user).catch(err => console.log(err));
+    }).catch(err => console.log(err));
   }
 
   //GUARDADO DEL USER EN FIRESTORE
@@ -37,7 +40,6 @@ export class AuthService {
       const userRef: AngularFirestoreDocument = this.firestore.doc(`usuarios/${uid}`);
       const userData: UserInterface = {
         uid: uid,
-        username: user.username,
         nombre_user: user.nombre_user,
         apellido_user: user.apellido_user,
         email_user: user.email_user,
@@ -45,7 +47,7 @@ export class AuthService {
         // avatar: user.avatar,
       }
 
-      return await userRef.set(userData, {merge: true});
+      return await userRef.set(userData, { merge: true });
 
     } catch (error) {
       console.log('Error al guardar los datos del usuario en firestore' + error);

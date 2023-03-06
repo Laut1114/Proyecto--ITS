@@ -4,6 +4,7 @@ import * as pdfFonts from 'pdfmake/build/vfs_fonts';
 import { Prere } from 'src/app/models/prere';
 import { PreInscripcionService } from 'src/app/services/pre_inscripcion/pre-inscripcion.service';
 import { ActivatedRoute } from '@angular/router';
+import { table } from 'console';
 
 (<any>pdfMake).vfs = pdfFonts.pdfMake.vfs;
 
@@ -47,8 +48,6 @@ export class PdfmakeComponent implements OnInit {
       });
 
       const pdfDefinition: any = {
-        
-
         content: [
           {
             stack: [
@@ -58,7 +57,21 @@ export class PdfmakeComponent implements OnInit {
           },
 
           {
-            ol: this.content1, margin: [0, 0]
+            table: {
+              widths: ['*'],
+              body: [
+                [{text: 'Nombre y Apellido        -        Email        -        N° Doc.        -        Nivel Educativo', margin: [15, 10, 0, 0]}],
+                [
+                  {
+                    stack: [
+                      {
+                        ol: this.content1, margin: [5, 10, 5, 5]
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
           }
         ],
 
@@ -87,7 +100,7 @@ export class PdfmakeComponent implements OnInit {
       });
 
       this.alumnosCarrera2.forEach(element => {
-        this.content2.push({ text: `${element.nombre} ${element.apellido} - ${element.email} - ${element.numDoc} - ${element.nivelUser}` });
+        this.content2.push({ text: `${element.nombre} ${element.apellido}  -  ${element.email}  -  ${element.numDoc}  -  ${element.nivelUser}` });
       });
 
       const pdfDefinition2: any = {
@@ -98,8 +111,23 @@ export class PdfmakeComponent implements OnInit {
             ],
             style: 'header'
           },
+
           {
-            ol: this.content2, margin: [5, 2, 5, 20]
+            table: {
+              widths: ['*'],
+              body: [
+                [{text: 'Nombre y Apellido        -        Email        -        N° Doc.        -        Nivel Educativo', margin: [15, 10, 0, 0]}],
+                [
+                  {
+                    stack: [
+                      {
+                        ol: this.content2, margin: [5, 10, 5, 5]
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
           }
         ],
 

@@ -52,32 +52,6 @@
     display: block;
 }
 
-/* nav ul li a {
-    text-decoration: none;
-    color: #f0edeb;
-    font-weight: bold;
-    border: 1px solid #ccc;
-    background-color: #121111;
-    padding: 2px 7px 2px 7px;
-}
-
-nav ul li a::before {
-    display: block;
-    content: '';
-    width: 0%;
-    height: 5px;
-    top: 0;
-    position: absolute;
-    transition: width 0.2s;
-    padding: 10 px;
-    text-decoration: none;
-}
-
-nav ul li a:hover::before {
-    width: 100%;
-} */
-
-
 /* animacion lineas btn */
 #span1 {
     top: 0;

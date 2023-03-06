@@ -23,9 +23,11 @@ export class PlanesEstudioComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.planService.getCarreras().subscribe((datos) => {
       this.carreras = datos;
     })
+
     this.authService.isAuth().subscribe(user => {
       if (user) {
         this.login = true;
@@ -40,5 +42,6 @@ export class PlanesEstudioComponent implements OnInit {
         this.userRol = ''
       }
     });
+
   }
 }

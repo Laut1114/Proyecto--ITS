@@ -19,9 +19,9 @@
                 <input type="password" class="form-control" placeholder="********" formControlName="password_user" required>
             </div>
         </form>
-        <!-- <div style="text-align: end;">
-            <a style="color: #898989;" href="">¿Olvidó su nombre de usuario o contraseña?</a>
-        </div> -->
+        <div style="text-align: end;">
+            <button style="color: #898989; background-color: transparent; border: none;" (click)="recuperarContra(formLogin.value.email_user)">¿Olvidó su contraseña?</button>
+        </div>
     </div>
     <br>
     <div class="buttons-container">
