@@ -29,8 +29,8 @@ export class ModalComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
+
   enviarDatos() {
     if (!this.formModal.invalid) {
       console.log(this.formModal.value);
@@ -39,8 +39,9 @@ export class ModalComponent implements OnInit {
       this.formModal.reset();
     }
     else {
-      alert("el fomulario es invalido")
-      console.log(this.formModal.value)
+      alert("el fomulario es invalido");
+      console.log(this.formModal.value);
     }
   }
+
 }

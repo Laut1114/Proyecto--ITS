@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   //CERRAR SESIÓN
-  logOut() {
+  async logOut() {
     return this.auth.signOut();
   }
 
@@ -44,7 +44,6 @@ export class AuthService {
         apellido_user: user.apellido_user,
         email_user: user.email_user,
         rol: "estudiante"
-        // avatar: user.avatar,
       }
 
       return await userRef.set(userData, { merge: true });
@@ -54,7 +53,7 @@ export class AuthService {
     }
   }
 
-  //ESTADO DE LA SESSION DEL USUARIO (LOGUEADO / NO_LOGUEADO)
+  //ESTADO DE LA SESION DEL USUARIO (LOGUEADO / NO_LOGUEADO)
   isAuth() {
     return this.auth.authState.pipe(map(user => user));
   }

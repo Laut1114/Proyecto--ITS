@@ -11,13 +11,15 @@ import { PreInscripcionService } from 'src/app/services/pre_inscripcion/pre-insc
   template: `<re-captcha (resolved)="resolved($event)" siteKey="6LdpX9QiAAAAAMSJVt-_XIQ2fmyVOIlGpfL10oap"></re-captcha>`
 })
 export class FormIngresoComponent implements OnInit {
-  private file!: File
-  public pathImagen: string = ""
+  // private file!: File;
+  public pathImagen: string = "";
+
   resolved(captchaResponse: string) {
     console.log(`Resolved captcha with response: ${captchaResponse}`);
   }
 
   formIngreso!: FormGroup;
+
   constructor(private fb: FormBuilder, private preService: PreInscripcionService) {
     this.formIngreso = this.fb.group({
       nombre: ['', Validators.required],
@@ -43,10 +45,6 @@ export class FormIngresoComponent implements OnInit {
     if (!this.formIngreso.invalid) {
       this.preService.enviarPre(this.formIngreso.value);
 
-      alert("Datos Agregados");
-
-      this.formIngreso.reset();
-
       fetch(`https://formsubmit.co/ajax/${this.formIngreso.value.email}`, {
         method: "POST",
         headers: {
@@ -69,14 +67,16 @@ export class FormIngresoComponent implements OnInit {
         })
       }).then(response => response.json()).catch(error => console.log(error));
 
-    } else {
-      alert("el fomulario es invalido")
-    }
+      alert("Datos Agregados");
+
+      this.formIngreso.reset();
+
+    } else {alert("el fomulario es invalido")}
 
   }
 
-  obtenerImagen(event: any) {
-    this.file = event.target.files[0]
-  }
+  // obtenerImagen(event: any) {
+  //   this.file = event.target.files[0]
+  // }
 
 }

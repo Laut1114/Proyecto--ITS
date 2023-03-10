@@ -9,8 +9,9 @@ export class ModalService {
   private modalColletion!: AngularFirestoreCollection<Modal>;
   
   constructor(private bd: AngularFirestore) {
-    this.modalColletion = this.bd.collection<Modal>('modal_datos')
+    this.modalColletion = this.bd.collection<Modal>('modal_datos');
   }
+
   enviarModal(datos: Modal) {
     return new Promise(async (resolve, reject) => {
       try {
@@ -18,9 +19,7 @@ export class ModalService {
         datos.id = id;
         const result = await this.modalColletion.doc(id).set(datos);
         resolve(result);
-      } catch (error) {
-        reject(error);
-      }
-    })
+      } catch (error) {reject(error);}
+    });
   }
 }

@@ -99,12 +99,13 @@
             <input type="text" class="form-control" id="validationCustom05" formControlName="provincia">
         </div>
 
-        <div class="mb-3 col-md-7">
-            <label for="formFileMultiple" class="form-label"><span id="color">*</span>Fotos del Documento:</label>
-            <input class="form-control" type="file" id="formFileMultiple" formControName="fotoDNI" required (change)="obtenerImagen($event)">
+        <div class="col-md-7">
+            <re-captcha (resolved)="resolved($event)" siteKey="6LdpX9QiAAAAAMSJVt-_XIQ2fmyVOIlGpfL10oap"></re-captcha>
+            <!-- <label for="formFileMultiple" class="form-label"><span id="color">*</span>Fotos del Documento:</label>
+            <input class="form-control" type="file" id="formFileMultiple" formControName="fotoDNI" required (change)="obtenerImagen($event)"> -->
         </div>
 
-        <re-captcha (resolved)="resolved($event)" siteKey="6LdpX9QiAAAAAMSJVt-_XIQ2fmyVOIlGpfL10oap"></re-captcha>
+        
 
         <div class="button-container">
             <button type="submit" [disabled]="formIngreso.invalid" (click)="enviaringreso()">Enviar</button>

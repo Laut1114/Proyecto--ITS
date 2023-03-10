@@ -16,16 +16,14 @@ export class FormLoginComponent implements OnInit {
     this.formLogin = this.fb.group({
       email_user: ['', Validators.email],
       password_user: ['', Validators.minLength(8)]
-    })
+    });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   login(email: string, password: string) {
     this.authService.login(email, password).then((credenciales) => {
       if(!credenciales) {
-        // AGREGAR 
         alert('datos incorrectos');
         return false;
       }

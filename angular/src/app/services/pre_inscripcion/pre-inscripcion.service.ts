@@ -9,11 +9,11 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class PreInscripcionService {
-  private urlImagen: string = '';
+  // private urlImagen: string = '';
   private preColletion!: AngularFirestoreCollection<Prere>;
 
   constructor(private bd: AngularFirestore, private storage: AngularFireStorage) {
-    this.preColletion = this.bd.collection<Prere>('usuario_pre')
+    this.preColletion = this.bd.collection<Prere>('usuario_pre');
   }
 
   enviarPre(formulario: Prere) {
@@ -25,11 +25,8 @@ export class PreInscripcionService {
         const result = await this.preColletion.doc(id).set(formulario);
         resolve(result);
 
-      } catch (error) {
-        reject(error);
-
-      }
-    })
+      } catch (error) {reject(error);}
+    });
   }
 
   getAlumnos() {

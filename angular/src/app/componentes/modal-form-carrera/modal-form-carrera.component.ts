@@ -35,7 +35,7 @@ export class ModalFormCarreraComponent implements OnInit {
   guardarCarrera(datos: CarreraInterface) {
     this.planService.agregarCarrera(datos).then(() => {
       alert('Se agrego la carrera');
-      this.formCarrera.reset()
+      this.formCarrera.reset();
     }).catch(err => console.log(err));
   }
 

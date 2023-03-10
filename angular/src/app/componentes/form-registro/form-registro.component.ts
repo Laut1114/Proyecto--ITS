@@ -22,12 +22,11 @@ export class FormRegistroComponent implements OnInit {
     });
   }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   registrarse(user: UserInterface) {
     this.authService.register(user).then(() => {
-      alert("Usuario registrado correctamente, por favor revise su buzon de entrada para validar su correo")
+      alert("Usuario registrado correctamente, por favor revise su buzon de entrada para validar su correo");
       this.router.navigate(['/login']);
     });
   }
